@@ -7,9 +7,12 @@
 //const int ledPin = 3;     //pin 3 has PWM funtion
 const int sensorPin1 = A0; //Pressure Sensor 1 - A0
 const int sensorPin2 = A1; //Pressure Sensor 2 - A1
+
 const int redColorPin = 6; //Red
 const int blueColorPin = 5; //Blue
 const int greenColorPin = 4; //Green
+
+const int laptopLightPin = A3; //Green
 
 //Variables:
 int value1, value2, value3; //save analog value
@@ -28,13 +31,19 @@ void loop(){
   
   value1 = analogRead(sensorPin1);       //Read and save analog value from potentiometer
   value2 = analogRead(sensorPin2);       //Read and save analog value from potentiometer 
+  value3 = analogRead(laptopLightPin) / 4;
   Serial.print("Sensor 1: ");
   Serial.print(value1);               //Print value
   Serial.print("\tSensor 2: ");
-  Serial.println(value2);
+  Serial.print(value2);
+  Serial.print("\tPR: ");
+  Serial.println(value3);
   //value = map(value, 0, 1023, 0, 255); //Map value 0-1023 to 0-255 (PWM)
 
-  if(value1 > 100){
+  if(value3 < 20){
+    setColor(0,0,0); 
+  }
+  else if(value1 > 100){
     setColor(255,0,0);        //red chilly mode
   }
   else if(value2 > 100){
