@@ -1,0 +1,5 @@
+Problem - do not turning off lights - wasted energy
+User needs  - more comfortable environemnt for bedroom - while reading the book user can get tired - too lazy to go to turn off the light - one thing user needs to do is put back to storage box close to the bedroom
+			- more convinient environemnt for living room - if user wants to change the light mode (e.g. from working to chilly mode for wathcing movie), user needs to change position of ball to another box
+			- user needs to just close the laptop screen to turn off the light
+Requirments - 			
