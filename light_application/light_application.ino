@@ -9,7 +9,7 @@ const int greenColorPin = 4; //Green
 const int laptopLightPin = A3; 
 
 const int bookLightPin = A4; 
-const int readLedPin = 10;
+const int readLedPin = 7;
 
 //Variables:
 int valueReadBox, valueFocusBox, valueLaptopLight, valueBookBox;     
@@ -67,12 +67,10 @@ void setMainLight(){
 }
 
 void setReadingLight(){
-  if(valueBookBox > 20){                     //if book is present in the storage book
+  if(valueBookBox > 50){                     //if book is present in the storage book
       digitalWrite(readLedPin, HIGH);       //turn on the LED diod
   } else {
       digitalWrite(readLedPin, LOW);        //turn off the LED diod
   }
-
-
 }
 
